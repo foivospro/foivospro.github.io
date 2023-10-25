@@ -739,7 +739,7 @@ section {
   border: 1px solid #eef0ef;
 }
 .search-sec{
-  padding: 2rem; 
+  padding: 2rem;
 }
 .search-slt{
   display: block;
@@ -748,7 +748,7 @@ section {
   line-height: 1.5;
   background-color: #fff;
   background-image: none;
-  border: 1px solid #ccc;;
+  border: 1px solid #ccc;
   height: calc(3rem + 2px) !important;
   border-radius:0;
 }
