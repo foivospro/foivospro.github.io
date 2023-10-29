@@ -61,7 +61,8 @@
      <div class="breadcrumbs" data-aos="fade-in">
       <div class="container">
         <h2>Questionnaire</h2>
-        <p>Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia id aut similique quia voluptas sit quaerat debitis. Rerum omnis ipsam aperiam consequatur laboriosam nemo harum praesentium. </p>
+        <p>Aren’t sure about what kind of master in computer science suits you the most? Here, by answering this
+          simple questionnaire, we will find you the top 3 computer science fields that fit with your personality! </p>
       </div>
     </div><!-- End Breadcrumbs -->
 
@@ -70,54 +71,465 @@
   <!-- ======= Header ======= -->
   <section id="form" class="form">
     <div class="form-group" id="radio-buttons">
-        <script>
-        var questions = [
-            "How do you rate customer support1",
-            "How do you rate another question2",
-            "How do you rate another question3",
-            "How do you rate another question4",
-            "How do you rate another question5",
-            "How do you rate customer support6",
-            "How do you rate another question7",
-            "How do you rate another question8",
-            "How do you rate another question9",
-            "How do you rate another question10"
-            // Προσθέστε εδώ άλλες ερωτήσεις αν χρειάζεστε
-        ];
-        
-        var radioButtonsContainer = document.getElementById("radio-buttons");
-        
-        questions.forEach(function(question) {
-            var questionDiv = document.createElement("div");
-            questionDiv.className = "text-center mb-3";
-            questionDiv.innerHTML = `<p><strong>${question}</strong></p><div class='d-inline mx-3'>Bad</div>`;
-        
-            for (var i = 1; i <= 5; i++) {
-            var radioButtonDiv = document.createElement("div");
-            radioButtonDiv.className = "form-check form-check-inline";
-        
-            var radioButton = document.createElement("input");
-            radioButton.className = "form-check-input";
-            radioButton.type = "radio";
-            radioButton.name = question;
-            radioButton.value = i;
-        
-            var label = document.createElement("label");
-            label.className = "form-check-label";
-            label.innerText = i;
-        
-            radioButtonDiv.appendChild(radioButton);
-            radioButtonDiv.appendChild(label);
-            questionDiv.appendChild(radioButtonDiv);
-            }
-        
-            questionDiv.innerHTML += "<div class='d-inline mx-3'>Excellent</div>";
-            radioButtonsContainer.appendChild(questionDiv);
-        });
-        </script>  
-    <div class="text-center">
-         <a href="courses.html" button type="button" class="btn btn-primary">Submit</button> </a>
-      </div>
+      <form>
+        <div class="text-center mb-1">
+            <p><strong>1) Do you have a strong foundation in mathematics and statistics?</strong></p>
+            <div class='d-inline mx-3'>Bad</div>
+            <input type="radio" id="rating1.1" name="rating1" value="1">
+            <label for="rating1.1">1</label>
+
+            <input type="radio" id="rating1.2" name="rating1" value="2">
+            <label for="rating1.2">2</label>
+
+            <input type="radio" id="rating1.3" name="rating1" value="3">
+            <label for="rating1.3">3</label>
+
+            <input type="radio" id="rating1.4" name="rating1" value="4">
+            <label for="rating1.4">4</label>
+
+            <input type="radio" id="rating1.5" name="rating1" value="5">
+            <label for="rating1.5">5</label>
+
+            <div class='d-inline mx-3'>Excellent</div>
+        </div>
+        <div class="text-center">
+
+
+          <div class="text-center mb-1">
+            <p><strong>2) Are you interested in analyzing data sets and looking for patterns in numbers?</strong></p>
+            <div class='d-inline mx-3'>Bad</div>
+            <input type="radio" id="rating2.1" name="rating2" value="1">
+            <label for="rating1">1</label>
+
+            <input type="radio" id="rating2.2" name="rating2" value="2">
+            <label for="rating2">2</label>
+
+            <input type="radio" id="rating2.3" name="rating2" value="3">
+            <label for="rating3">3</label>
+
+            <input type="radio" id="rating2.4" name="rating2" value="4">
+            <label for="rating4">4</label>
+
+            <input type="radio" id="rating2.5" name="rating2" value="5">
+            <label for="rating5">5</label>
+
+            <div class='d-inline mx-3'>Excellent</div>
+        </div>
+        <div class="text-center">
+
+
+          <div class="text-center mb-3">
+            <p><strong>3) Do you have a collaborative mindset and the ability to improvise as a person?</strong></p>
+            <div class='d-inline mx-3'>Bad</div>
+            <input type="radio" id="rating1" name="rating" value="1">
+            <label for="rating1">1</label>
+
+            <input type="radio" id="rating2" name="rating" value="2">
+            <label for="rating2">2</label>
+
+            <input type="radio" id="rating3" name="rating" value="3">
+            <label for="rating3">3</label>
+
+            <input type="radio" id="rating4" name="rating" value="4">
+            <label for="rating4">4</label>
+
+            <input type="radio" id="rating5" name="rating" value="5">
+            <label for="rating5">5</label>
+
+            <div class='d-inline mx-3'>Excellent</div>
+        </div>
+        <div class="text-center">
+
+
+          <div class="text-center mb-3">
+            <p><strong>4) Do you find yourself drawn to the challenges and the mission of securing digital systems?</strong></p>
+            <div class='d-inline mx-3'>Bad</div>
+            <input type="radio" id="rating1" name="rating" value="1">
+            <label for="rating1">1</label>
+
+            <input type="radio" id="rating2" name="rating" value="2">
+            <label for="rating2">2</label>
+
+            <input type="radio" id="rating3" name="rating" value="3">
+            <label for="rating3">3</label>
+
+            <input type="radio" id="rating4" name="rating" value="4">
+            <label for="rating4">4</label>
+
+            <input type="radio" id="rating5" name="rating" value="5">
+            <label for="rating5">5</label>
+
+            <div class='d-inline mx-3'>Excellent</div>
+        </div>
+        <div class="text-center">
+
+
+
+          <div class="text-center mb-3">
+            <p><strong>5) Do you have a penchant for experimentation and innovation?</strong></p>
+            <div class='d-inline mx-3'>Bad</div>
+            <input type="radio" id="rating1" name="rating" value="1">
+            <label for="rating1">1</label>
+
+            <input type="radio" id="rating2" name="rating" value="2">
+            <label for="rating2">2</label>
+
+            <input type="radio" id="rating3" name="rating" value="3">
+            <label for="rating3">3</label>
+
+            <input type="radio" id="rating4" name="rating" value="4">
+            <label for="rating4">4</label>
+
+            <input type="radio" id="rating5" name="rating" value="5">
+            <label for="rating5">5</label>
+
+            <div class='d-inline mx-3'>Excellent</div>
+        </div>
+        <div class="text-center">
+
+
+          <div class="text-center mb-3">
+            <p><strong>6) Are you keen on building projects like image recognition, natural language processing, or
+              creating a chatbot?</strong></p>
+            <div class='d-inline mx-3'>Bad</div>
+            <input type="radio" id="rating1" name="rating" value="1">
+            <label for="rating1">1</label>
+
+            <input type="radio" id="rating2" name="rating" value="2">
+            <label for="rating2">2</label>
+
+            <input type="radio" id="rating3" name="rating" value="3">
+            <label for="rating3">3</label>
+
+            <input type="radio" id="rating4" name="rating" value="4">
+            <label for="rating4">4</label>
+
+            <input type="radio" id="rating5" name="rating" value="5">
+            <label for="rating5">5</label>
+
+            <div class='d-inline mx-3'>Excellent</div>
+        </div>
+        <div class="text-center">
+
+          <div class="text-center mb-3">
+            <p><strong>7) Do you enjoy working with technologies like React, Angular, and Vue.js?</strong></p>
+            <div class='d-inline mx-3'>Bad</div>
+            <input type="radio" id="rating1" name="rating" value="1">
+            <label for="rating1">1</label>
+
+            <input type="radio" id="rating2" name="rating" value="2">
+            <label for="rating2">2</label>
+
+            <input type="radio" id="rating3" name="rating" value="3">
+            <label for="rating3">3</label>
+
+            <input type="radio" id="rating4" name="rating" value="4">
+            <label for="rating4">4</label>
+
+            <input type="radio" id="rating5" name="rating" value="5">
+            <label for="rating5">5</label>
+
+            <div class='d-inline mx-3'>Excellent</div>
+        </div>
+        <div class="text-center">
+
+
+
+          <div class="text-center mb-3">
+            <p><strong>8) Are you naturally curious about how websites and web applications work and eager to create
+              your own?</strong></p>
+            <div class='d-inline mx-3'>Bad</div>
+            <input type="radio" id="rating1" name="rating" value="1">
+            <label for="rating1">1</label>
+
+            <input type="radio" id="rating2" name="rating" value="2">
+            <label for="rating2">2</label>
+
+            <input type="radio" id="rating3" name="rating" value="3">
+            <label for="rating3">3</label>
+
+            <input type="radio" id="rating4" name="rating" value="4">
+            <label for="rating4">4</label>
+
+            <input type="radio" id="rating5" name="rating" value="5">
+            <label for="rating5">5</label>
+
+            <div class='d-inline mx-3'>Excellent</div>
+        </div>
+        <div class="text-center">
+
+
+
+          <div class="text-center mb-3">
+            <p><strong>9) Do you find yourself captivated by the intricacies of network communication?</strong></p>
+            <div class='d-inline mx-3'>Bad</div>
+            <input type="radio" id="rating1" name="rating" value="1">
+            <label for="rating1">1</label>
+
+            <input type="radio" id="rating2" name="rating" value="2">
+            <label for="rating2">2</label>
+
+            <input type="radio" id="rating3" name="rating" value="3">
+            <label for="rating3">3</label>
+
+            <input type="radio" id="rating4" name="rating" value="4">
+            <label for="rating4">4</label>
+
+            <input type="radio" id="rating5" name="rating" value="5">
+            <label for="rating5">5</label>
+
+            <div class='d-inline mx-3'>Excellent</div>
+        </div>
+        <div class="text-center">
+
+
+
+          <div class="text-center mb-3">
+            <p><strong>10) Are you intrigued by topics like firewalls, encryption, and securing network infrastructure?</strong></p>
+            <div class='d-inline mx-3'>Bad</div>
+            <input type="radio" id="rating1" name="rating" value="1">
+            <label for="rating1">1</label>
+
+            <input type="radio" id="rating2" name="rating" value="2">
+            <label for="rating2">2</label>
+
+            <input type="radio" id="rating3" name="rating" value="3">
+            <label for="rating3">3</label>
+
+            <input type="radio" id="rating4" name="rating" value="4">
+            <label for="rating4">4</label>
+
+            <input type="radio" id="rating5" name="rating" value="5">
+            <label for="rating5">5</label>
+
+            <div class='d-inline mx-3'>Excellent</div>
+        </div>
+        <div class="text-center">
+
+
+
+
+
+          <div class="text-center mb-3">
+            <p><strong>11) Do you enjoy the process of building and troubleshooting hardware systems?</strong></p>
+            <div class='d-inline mx-3'>Bad</div>
+            <input type="radio" id="rating1" name="rating" value="1">
+            <label for="rating1">1</label>
+
+            <input type="radio" id="rating2" name="rating" value="2">
+            <label for="rating2">2</label>
+
+            <input type="radio" id="rating3" name="rating" value="3">
+            <label for="rating3">3</label>
+
+            <input type="radio" id="rating4" name="rating" value="4">
+            <label for="rating4">4</label>
+
+            <input type="radio" id="rating5" name="rating" value="5">
+            <label for="rating5">5</label>
+
+            <div class='d-inline mx-3'>Excellent</div>
+        </div>
+        <div class="text-center">
+
+
+
+
+          <div class="text-center mb-3">
+            <p><strong>12) Do you have an interest in electronics and robotics?</strong></p>
+            <div class='d-inline mx-3'>Bad</div>
+            <input type="radio" id="rating1" name="rating" value="1">
+            <label for="rating1">1</label>
+
+            <input type="radio" id="rating2" name="rating" value="2">
+            <label for="rating2">2</label>
+
+            <input type="radio" id="rating3" name="rating" value="3">
+            <label for="rating3">3</label>
+
+            <input type="radio" id="rating4" name="rating" value="4">
+            <label for="rating4">4</label>
+
+            <input type="radio" id="rating5" name="rating" value="5">
+            <label for="rating5">5</label>
+
+            <div class='d-inline mx-3'>Excellent</div>
+        </div>
+        <div class="text-center">
+
+
+
+          <div class="text-center mb-3">
+            <p><strong>13) Do you have an interest in building functional applications?</strong></p>
+            <div class='d-inline mx-3'>Bad</div>
+            <input type="radio" id="rating1" name="rating" value="1">
+            <label for="rating1">1</label>
+
+            <input type="radio" id="rating2" name="rating" value="2">
+            <label for="rating2">2</label>
+
+            <input type="radio" id="rating3" name="rating" value="3">
+            <label for="rating3">3</label>
+
+            <input type="radio" id="rating4" name="rating" value="4">
+            <label for="rating4">4</label>
+
+            <input type="radio" id="rating5" name="rating" value="5">
+            <label for="rating5">5</label>
+
+            <div class='d-inline mx-3'>Excellent</div>
+        </div>
+        <div class="text-center">
+
+
+
+          <div class="text-center mb-3">
+            <p><strong>14) Are you familiar with data structures and algorithms?</strong></p>
+            <div class='d-inline mx-3'>Bad</div>
+            <input type="radio" id="rating1" name="rating" value="1">
+            <label for="rating1">1</label>
+
+            <input type="radio" id="rating2" name="rating" value="2">
+            <label for="rating2">2</label>
+
+            <input type="radio" id="rating3" name="rating" value="3">
+            <label for="rating3">3</label>
+
+            <input type="radio" id="rating4" name="rating" value="4">
+            <label for="rating4">4</label>
+
+            <input type="radio" id="rating5" name="rating" value="5">
+            <label for="rating5">5</label>
+
+            <div class='d-inline mx-3'>Excellent</div>
+        </div>
+        <div class="text-center">
+
+
+
+          <div class="text-center mb-3">
+            <p><strong>15) Do you find analyzing the efficiency and complexity of algorithms intriguing?</strong></p>
+            <div class='d-inline mx-3'>Bad</div>
+            <input type="radio" id="rating1" name="rating" value="1">
+            <label for="rating1">1</label>
+
+            <input type="radio" id="rating2" name="rating" value="2">
+            <label for="rating2">2</label>
+
+            <input type="radio" id="rating3" name="rating" value="3">
+            <label for="rating3">3</label>
+
+            <input type="radio" id="rating4" name="rating" value="4">
+            <label for="rating4">4</label>
+
+            <input type="radio" id="rating5" name="rating" value="5">
+            <label for="rating5">5</label>
+
+            <div class='d-inline mx-3'>Excellent</div>
+        </div>
+        <div class="text-center">
+
+
+
+          <div class="text-center mb-3">
+            <p><strong>16) Do you enjoy understanding formal mathematical proofs and the theoretical limits of
+              computation?</strong></p>
+            <div class='d-inline mx-3'>Bad</div>
+            <input type="radio" id="rating1" name="rating" value="1">
+            <label for="rating1">1</label>
+
+            <input type="radio" id="rating2" name="rating" value="2">
+            <label for="rating2">2</label>
+
+            <input type="radio" id="rating3" name="rating" value="3">
+            <label for="rating3">3</label>
+
+            <input type="radio" id="rating4" name="rating" value="4">
+            <label for="rating4">4</label>
+
+            <input type="radio" id="rating5" name="rating" value="5">
+            <label for="rating5">5</label>
+
+            <div class='d-inline mx-3'>Excellent</div>
+        </div>
+        <div class="text-center">
+
+
+
+          <div class="text-center mb-3">
+            <p><strong>17) Do you find the idea of aligning technology with organizational goals intriguing?</strong></p>
+            <div class='d-inline mx-3'>Bad</div>
+            <input type="radio" id="rating1" name="rating" value="1">
+            <label for="rating1">1</label>
+
+            <input type="radio" id="rating2" name="rating" value="2">
+            <label for="rating2">2</label>
+
+            <input type="radio" id="rating3" name="rating" value="3">
+            <label for="rating3">3</label>
+
+            <input type="radio" id="rating4" name="rating" value="4">
+            <label for="rating4">4</label>
+
+            <input type="radio" id="rating5" name="rating" value="5">
+            <label for="rating5">5</label>
+
+            <div class='d-inline mx-3'>Excellent</div>
+        </div>
+        <div class="text-center">
+
+
+
+          <div class="text-center mb-3">
+            <p><strong>18) Do you find interesting topics like database management and how organizations store, retrieve,
+              and manage data?</strong></p>
+            <div class='d-inline mx-3'>Bad</div>
+            <input type="radio" id="rating1" name="rating" value="1">
+            <label for="rating1">1</label>
+
+            <input type="radio" id="rating2" name="rating" value="2">
+            <label for="rating2">2</label>
+
+            <input type="radio" id="rating3" name="rating" value="3">
+            <label for="rating3">3</label>
+
+            <input type="radio" id="rating4" name="rating" value="4">
+            <label for="rating4">4</label>
+
+            <input type="radio" id="rating5" name="rating" value="5">
+            <label for="rating5">5</label>
+
+            <div class='d-inline mx-3'>Excellent</div>
+        </div>
+        <div class="text-center">
+
+
+
+          <div class="text-center mb-3">
+            <p><strong>19) Would you like to combine computer science with a different field like biology, geology, chemistry or physics?</strong></p>
+            <div class='d-inline mx-3'>Bad</div>
+            <input type="radio" id="rating1" name="rating" value="1">
+            <label for="rating1">1</label>
+
+            <input type="radio" id="rating2" name="rating" value="2">
+            <label for="rating2">2</label>
+
+            <input type="radio" id="rating3" name="rating" value="3">
+            <label for="rating3">3</label>
+
+            <input type="radio" id="rating4" name="rating" value="4">
+            <label for="rating4">4</label>
+
+            <input type="radio" id="rating5" name="rating" value="5">
+            <label for="rating5">5</label>
+
+            <div class='d-inline mx-3'>Excellent</div>
+        </div>
+        <div class="text-center">
+          <a href="courses.html" button type="button" class="btn btn-primary">Submit</button> </a>
+       </div>
+    </form>
+   
     </div>
 </section>
 
