@@ -794,7 +794,7 @@ section {
   margin: 0;
 }
 
-.courses .course-content .price {
+.courses .course-content .year {
   margin: 0;
   font-weight: 700;
   font-size: 18px;
@@ -818,10 +818,6 @@ section {
   color: #5a6c60;
 }
 
-.courses .trainer .trainer-rank {
-  font-size: 18px;
-  color: #657a6d;
-}
 
 /*--------------------------------------------------------------
 # Trainers
