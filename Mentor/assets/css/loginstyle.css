@@ -100,4 +100,32 @@ a[target='_blank']{
     background: #910808;
     color: #fff;
   }
+  .goback a,
+.goback a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0 10px 25px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #c91603;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.goback a i,
+.goback a:focus i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+
+.goback a:hover,
+.goback .active,
+.goback .active:focus,
+.goback li:hover>a {
+  color: #d41d08;
+}
   
+
