@@ -57,7 +57,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #d35e51;
+  background: #d41d08;
   color: #fff;
 }
 
@@ -147,8 +147,8 @@ h6 {
 * Get Startet Button 
 */
 .get-started-btn {
-  margin-left: 22px;
-  background: #c91603;;
+  margin-left: 20px;
+  background: #c91603;
   color: #fff;
   border-radius: 50px;
   padding: 8px 25px;
@@ -159,7 +159,7 @@ h6 {
 }
 
 .get-started-btn:hover {
-  background: #fb5442;
+  background: #d41d08;
   color: #fff;
 }
 
@@ -197,11 +197,11 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0 10px 30px;
+  padding: 10px 0 10px 25px;
   font-family: "Poppins", sans-serif;
   font-size: 12px;
   font-weight: 500;
-  color: #37423b;
+  color: #000000;
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -217,7 +217,7 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #c91603;
+  color: #d41d08;
 }
 
 .navbar .dropdown ul {
@@ -235,6 +235,23 @@ h6 {
   transition: 0.3s;
   border-radius: 4px;
 }
+
+input[type=search_home] {
+  padding: 3px;
+  margin-top: 9px;
+  margin-bottom: 9px;
+  margin-left: 25px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  border: 1px solid #d2d1d1;
+  border-radius: 15px;
+}
+
+input[type=search_home]:focus {
+  border-color: #c91603; 
+}
+
+
 
 .navbar .dropdown ul li {
   min-width: 200px;
@@ -254,7 +271,7 @@ h6 {
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover>a {
-  color: #c91603;
+  color: #d41d08;
 }
 
 .navbar .dropdown:hover>ul {
@@ -396,6 +413,7 @@ h6 {
   display: block;
 }
 
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -448,7 +466,7 @@ h6 {
   letter-spacing: 1px;
   display: inline-block;
   padding: 20px 30px;
-  border-radius: 0px;
+  border-radius: 10px;
   transition: 0.5s;
   margin-top: 30px;
   background: #c91603;
@@ -456,8 +474,9 @@ h6 {
 }
 
 #hero .btn-get-started:hover {
-  background: #eb7366;
+  background: #eb2610;
 }
+
 
 @media (min-width: 1024px) {
   #hero {
@@ -1032,6 +1051,28 @@ section {
 
 .course-details .course-info a {
   color: #7a6565;
+}
+
+  
+/*--------------------------------------------------------------
+# Form
+--------------------------------------------------------------*/
+
+.btn-form {
+  margin-left: 20px;
+  background: #c91603;
+  color: #fff;
+  border-radius: 50px;
+  padding: 8px 25px;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.btn-form:hover {
+  background: #eb2610;
+  color: #fff;
 }
 
 /*--------------------------------------------------------------
