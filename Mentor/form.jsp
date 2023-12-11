@@ -73,7 +73,7 @@ List<String> question = questions.getQuestions();
   <!-- ======= Header ======= -->
   <section id="form" class="form">
     <div class="form-group" id="radio-buttons">
-      <form method="post" action="getCourses.jsp">
+      <form method="post" action="questionnaireController.jsp">
         <div class="text-center mb-1">
             <p><strong>1. q</strong></p>
             <div class='d-inline mx-3'>Bad</div>

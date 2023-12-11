@@ -2,6 +2,8 @@ package exercise;
 
 public class User {
     
+    private int idUser;
+    private int idQuestionnaire;
     private String firstname;
 	private String lastname;
 	private String email;
@@ -20,6 +22,23 @@ public class User {
         this.lastname = lastname;
         this.email = email;
         this.password = password;
+    }
+
+     public int getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
+    }
+
+
+     public int getIdQuestionnaire() {
+        return idQuestionnaire;
+    }
+
+    public void setIdQuestionnaire(int idQuestionnaire) {
+        this.idQuestionnaire = idQuestionnaire;
     }
 
     public String getFirstname() {
