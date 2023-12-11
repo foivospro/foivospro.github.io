@@ -27,7 +27,7 @@ if (user == null) {
 
     <jsp:forward page="login.jsp"/>
 
-<% else {
+<% }else {
         
         user.setIdQuestionnaire(user.getIdUser()+100); 
         int [] score = new int[19];

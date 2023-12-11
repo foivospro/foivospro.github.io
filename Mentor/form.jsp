@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="exercise.*" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,12 +67,14 @@
       </div>
     </div><!-- End Breadcrumbs -->
 
-<!-- den to exo ensomatosei akoma -->
+
 <%
 FormQuestions questions = new FormQuestions();
 List<String> question = questions.getQuestions();
 %>
   <!-- ======= Header ======= -->
+
+  <!-- εδω θελει while για να δειχνει τις ερωτησεις- προσοχη οτι και τα name και ids (της φορμας html) πρεπει να παραγονται δυναμικα -->
   <section id="form" class="form">
     <div class="form-group" id="radio-buttons">
       <form method="post" action="questionnaireController.jsp">
