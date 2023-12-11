@@ -36,16 +36,16 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a></h1>
+      <h1 class="logo me-auto"><a href="index.jsp" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a></h1>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><input type="search_home" placeholder="  Search Masters..."></li>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li> 
-          <li><a href="courses.html">Masters</a></li> 
-          <li><a href="form.html">Questionnaire</a></li>          
-          <li><a href="login.html">Log in | Sign up</a></li>
+          <li><a href="index.jsp">Home</a></li>
+          <li><a href="about.jsp">About</a></li> 
+          <li><a href="courses.jsp">Masters</a></li> 
+          <li><a href="form.jsp">Questionnaire</a></li>          
+          <li><a href="login.jsp">Log in | Sign up</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -72,7 +72,7 @@
                   <p class="year">1 year</p>
                 </div>
 
-                <h3><a href="course-details.html">Robotics and Autonomous Systems Engineering</a></h3>
+                <h3><a href="course-details.jsp">Robotics and Autonomous Systems Engineering</a></h3>
                 <p>Become an expert in the fast-evolving word of robotics and equip yourself for a job in the industry of the future with this Robotics and Autonomous Systems Engineering programme from Edinburgh Napier University.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="trainer-profile d-flex align-items-center">
@@ -94,7 +94,7 @@
                   
                 </div>
 
-                <h3><a href="course-details.html">Artificial Intelligence and Robotics with Advanced Research</a></h3>
+                <h3><a href="course-details.jsp">Artificial Intelligence and Robotics with Advanced Research</a></h3>
                 <p>This new version of the Artifiacial Intelligence and Robotics with Advanced Research program from University of Hertfordshire haw been carefully designed to achieve appropriate levels of 
                   accreditation and the department is currently in touch with the BCS regarding continued accreditation.  </p>
                 <div class="trainer d-flex justify-content-between align-items-center">
@@ -116,7 +116,7 @@
                   <p class="year">1 year</p>
                 </div>
 
-                <h3><a href="course-details.html">Cyber Security and Forensics</a></h3>
+                <h3><a href="course-details.jsp">Cyber Security and Forensics</a></h3>
                 <p>This Cyber Security and Forensics M.Sc. degree offered at the University of Westminster focusses on two aspects of Cyber Security: analysis and assessment of risk plus 
                   how to minimise it and how to extract and use digital information from a wide range of systems and devices.
                 </p>
@@ -139,7 +139,7 @@
                   <p class="year">2 years</p>
                 </div>
 
-                <h3><a href="course-details.html">Theoretical and Computational Methods</a></h3>
+                <h3><a href="course-details.jsp">Theoretical and Computational Methods</a></h3>
                 <p>The Theoretical and Computational Methods programme offered by the University of Helsinki will give you a strong basis in the theoretical methods, modelling and 
                   and mathematical and numerical analysis within physics, mathematics, chemistry and/or computer science.
                 </p>
@@ -162,7 +162,7 @@
                   <p class="year">2 years</p>
                 </div>
 
-                <h3><a href="course-details.html">Software Engineering for Information Systems</a></h3>
+                <h3><a href="course-details.jsp">Software Engineering for Information Systems</a></h3>
                 <p>In this Master of Software Engineering for Information Systems at Free University of Bozen-Bolzano, you will learn how to leverange next-technologiew such as Cloud Computing, Internet of Things and 
                   Analytics to create, connect, optimize and engineer innovative systems moving to the programatic application and commercialization on a rapid and large scale.
                 </p>
@@ -198,7 +198,7 @@
               Athens, 10431<br>
               Greece <br><br>
               <strong>Phone:</strong> 210-8203 876<br>
-              <strong>Email:</strong> masteMe@aueb.com<br>
+              <strong>Email:</strong> masterMe@aueb.com<br>
             </p>
           </div>
   
