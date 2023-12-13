@@ -86,7 +86,6 @@ public class UserDAO {
 	/**
 	 * This method is used to authenticate a user.
 	 * 
-	 * @param username, String
 	 * @param password, String
 	 * @return User, the User object
 	 * @throws Exception, if the credentials are not valid
@@ -134,7 +133,7 @@ public class UserDAO {
 	public void register(User user) throws Exception {
 		DB db = new DB();
 		String query1 = "SELECT * FROM user WHERE password=? OR email=?;";
-		String query2 = "INSERT INTO `user` (`name`,`surname`,`email`,`password`) VALUES (?,?,?,?);";
+		String query2 = "INSERT INTO user (name,surname,email,password) VALUES (?,?,?,?);";
 		try {
 			Connection con = db.getConnection();
 			PreparedStatement stmt1 = con.prepareStatement(query1);
@@ -162,5 +161,59 @@ public class UserDAO {
 			db.close();
 		}
 	}//end of register
+
+
+
+
+
+	public int getIdUserDB(User user) throws Exception {
+		DB db = new DB();
+		String query = "SELECT iduser FROM user WHERE email=? AND password=?;";
+		
+		try {
+			Connection con = db.getConnection();
+			PreparedStatement stmt = con.prepareStatement(query);
+			stmt.setString(1, user.getEmail());
+			stmt.setString(2, user.getPassword());
+			ResultSet rs = stmt.executeQuery();
+            if (!rs.next()) {  
+                rs.close();
+                stmt.close();
+                db.close();
+				throw new Exception("Wrong user");
+                
+            }
+			int idUser = rs.getInt("iduser");
+            rs.close();
+            stmt.close();
+			db.close();
+            return idUser;
+		} catch (Exception e) {
+			db.close();
+            throw new Exception(e.getMessage());
+		} finally {
+            db.close();
+        }				
+	}
+
+	public void updateIdQuestionnaire(int idUser, int idquestionnaire) throws Exception {
+		DB db = new DB();
+		String query = "UPDATE user SET idquestionnaire = ? WHERE iduser = ? ;";
+		try {
+			Connection con = db.getConnection();
+			PreparedStatement stmt = con.prepareStatement(query);
+			stmt.setInt(1, idquestionnaire);
+			stmt.setInt(2, idUser);
+			stmt.executeUpdate();
+            stmt.close();
+			con.close();
+			db.close();
+		} catch (Exception e) {
+			db.close();
+            throw new Exception(e.getMessage());
+		} finally {
+            db.close();
+        }				
+	}
 
 } //End of class
