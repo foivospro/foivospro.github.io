@@ -91,8 +91,8 @@
                                     </button>
                                 </div>
                             </div>
-                            <div class="get-started-btn">
-                                <button type="submit">Register</button>
+                            <div class="text-center">
+                                <button type="submit" class="btn-form">Sign up</button>
                             </div>
                             <div class="text-center pt-4 text-muted">Already have an account? <a href="login.jsp">Log in</a>
                             <div class="goback"><a href="index.jsp">Go Back to HomaPage</a>

@@ -6,9 +6,18 @@
         UserDAO userdao = new UserDAO();
         try {
             User user = userdao.authenticate(email, password);
-            session.setAttribute("userObj2023", user); %>
-            <jsp:forward page="index.jsp"/>
-<%      } catch (Exception e) {
+            session.setAttribute("user", user); 
+
+            if (request.getParameter("returnUrl") != null) {
+%>
+                <jsp:forward page="form.jsp"/>
+<%
+            } else {
+%>
+                <jsp:forward page="index.jsp"/>
+<%
+            }
+        } catch (Exception e) {
             request.setAttribute("message", e.getMessage()); %>
             <jsp:forward page="login.jsp"/>
 <%      }

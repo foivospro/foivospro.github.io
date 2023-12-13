@@ -9,27 +9,27 @@ String surname = request.getParameter("surname");
 String email = request.getParameter("email");
 String password = request.getParameter("password");
 String confirm = request.getParameter("confirm");
-ArrayList<String> list = new ArrayList<String>();
+
 
 
 
 boolean flag = true;
 
 if (name == null || name.length() < 3) {
-    list.add("1. Name should have at least 3 characters.");
+    //list.add("Name should have at least 3 characters.");
     flag = false;
 }
 if (surname == null || surname.length() < 3) {
-    list.add("2. Surname should have at least 3 characters.");
+    //list.add("Surname should have at least 3 characters.");
     flag = false;
 }
 
 if (password == null || password.length() < 3) {
-    list.add("4. Password should have at least 3 characters.");
+    //list.add("Password should have at least 3 characters.");
     flag = false;
 }
 if (confirm == null || !confirm.equals(password)) {
-    list.add("5. Confirmation password does not match.");
+    //list.add("Confirmation password does not match.");
     flag = false;
 }
 
@@ -37,19 +37,22 @@ if (confirm == null || !confirm.equals(password)) {
 if (flag==true) { 
     try{
         UserDAO userdao = new UserDAO();
-        userdao.register(new User(name,surname,email,password)); %>
-        request.setAtrribute("Message", "Sing up !")
+        User user = new User(name,surname,email,password);
+        userdao.register(user); 
+        int idUser = userdao.getIdUserDB(user);
+        user.setIdUser(idUser);
+        request.setAttribute("message", "Registration Successful!");%>
         <jsp:forward page="login.jsp"/>
         
 
-    <% } catch (Exception e) {%>
-        request.setAtrribute("Message", "NO Sing up !")
+    <% } catch (Exception e) {
+        request.setAttribute("message", e.getMessage()); %>
         <jsp:forward page="signup.jsp"/>
 
-         
-<%} } else { %>
+    <%}    
+    } else { 
+    request.setAttribute("message", "Registration Failed. Please try again.");%>
     <jsp:forward page="signup.jsp"/>
-    request.setAtrribute("Message", "NO Sing up !")
     <%}%>
 
 

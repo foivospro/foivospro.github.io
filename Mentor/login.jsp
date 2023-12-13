@@ -55,7 +55,7 @@
 
                     <div class="panel-body p-3">
                         <form action="LoginController.jsp" method="POST">
-
+                            <input type="hidden" name="returnURL" value="<%= request.getAttribute("returnUrl")%>">
                             <div class="form-group py-2">
                                 <div class="input-field">
                                     <span class="far fa-user p-2"></span>
@@ -70,8 +70,8 @@
                                 </div>
                             </div>
 
-                            <div class="get-started-btn">
-                                <button type="submit">Login</button>
+                            <div class="text-center">
+                                <button type="submit" class="btn-form">Login</button>
                             </div>
 
                             <div class="text-center pt-4 text-muted">Don't have an account? <a href="signup.jsp">Sign up</a></div>
