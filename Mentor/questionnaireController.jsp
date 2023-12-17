@@ -1,32 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="exercise.*" %>
 
-<!-- Check if user is logged in -->
 <%
 User user = (User)session.getAttribute("user");		
-if (user == null) {
-        request.setAttribute("message", "To view the Questionnaire results, please log in.");
-        request.setAttribute("returnUrl", "");
-
-%>
-
-    <jsp:forward page="login.jsp"/>
-
-<% }else {
-%>
-        <!-- Verify that all radio buttons have been selected -->
-<%
-        for (int i = 1; i <= 20; i++) {
-                String paramName = "rating" + i;
-                String ratingValue = request.getParameter(paramName);
-                if (ratingValue == null) {
-                        request.setAttribute("message", "You have not checked all the radio-buttons");
+for (int i = 1; i <= 20; i++) {
+        String paramName = "rating" + i;
+        String ratingValue = request.getParameter(paramName);
+        if (ratingValue == null) {
+                request.setAttribute("message", "You have not checked all the radio-buttons");
         %>
-                        <jsp:forward page="form.jsp"/>
+                <jsp:forward page="questionnaire.jsp"/>
         <%
-                }
         }
+}
 
+
+if(user == null){
+        request.setAttribute("message", "To view the Questionnaire results, please log in.");
+        request.setAttribute("returnUrl", "questionnaire.jsp"); %>
+        <jsp:forward page="login.jsp"/>
+<%
+}else {
         Questionnaire q = new Questionnaire();
         UserDAO userdao = new UserDAO();
         int idUser = userdao.getIdUserDB(user);
@@ -45,7 +39,7 @@ if (user == null) {
          q.InsertCategoryScore(idQuestionnaire);
          session.setAttribute("top3",q.topCategories(idQuestionnaire)); 
          userdao.updateIdQuestionnaire(idUser,idQuestionnaire);   %>
-         <jsp:forward page="coursesController.jsp"/>
+         <jsp:forward page="masters.jsp"/>
          <%       
 }
 %>

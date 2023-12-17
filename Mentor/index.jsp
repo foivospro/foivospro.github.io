@@ -24,8 +24,8 @@ if (user == null) {
           <li><input type="search_home" placeholder="  Search Masters..."></li>
           <li class="active"><a href="index.jsp">Home</a></li>
           <li><a href="about.jsp">About</a></li> 
-          <li><a href="courses.jsp">Masters</a></li> 
-          <li><a href="form.jsp">Questionnaire</a></li>    
+          <li><a href="masters.jsp">Masters</a></li> 
+          <li><a href="questionnaire.jsp">Questionnaire</a></li>    
           <li><a href="contact.jsp">Contact</a></li>        
           <li><a href="login.jsp" button type="button" class="btn-get-started">Log in | Sign up</a></li>
           
@@ -48,8 +48,8 @@ if (user == null) {
           <li><input type="search_home" placeholder="  Search Masters..."></li>
           <li class="active"><a href="index.jsp">Home</a></li>
           <li><a href="about.jsp">About</a></li> 
-          <li><a href="courses.jsp">Masters</a></li> 
-          <li><a href="form.jsp">Questionnaire</a></li>    
+          <li><a href="masters.jsp">Masters</a></li> 
+          <li><a href="questionnaire.jsp">Questionnaire</a></li>    
           <li><a href="contact.jsp">Contact</a></li>        
           <li><a href="logout.jsp">Log out | <%=user.getFirstname()%> <%=user.getLastname()%> </a></li> 
         </ul>
@@ -66,7 +66,7 @@ if (user == null) {
     <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
       <h1>Find your dream study,<br>Discover thousands of  CS  Master's degrees</h1>
       <h2>Looking for your ideal master's degree match?</h2>
-      <a href="form.jsp" class="btn-get-started">Get Personalized Results</a>
+      <a href="questionnaire.jsp" class="btn-get-started">Get Personalized Results</a>
     </div>
   </section><!-- End Hero -->
 
@@ -119,7 +119,7 @@ if (user == null) {
               <p class="price">Free</p>
             </div>
 
-            <h3><a href="course-details.jsp">Επιστήμη Δεδομένων και Μηχανική Μάθηση</a></h3>
+            <h3><a href="masterdetails.jsp">Επιστήμη Δεδομένων και Μηχανική Μάθηση</a></h3>
             <p>Η Σχολή Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών του Εθνικού Μετσόβιου Πολυτεχνείου (ΕΜΠ) σε συνεργασία με τις Σχολές Εφαρμοσμένων Μαθηματικών και Φυσικών Επιστημών, Πολιτικών Μηχανικών και Αγρονόμων και Τοπογράφων Μηχανικών του ΕΜΠ οργανώνει και λειτουργεί από το ακαδημαϊκό έτος 2018-2019 Διατμηματικό Πρόγραμμα Μεταπτυχιακών Σπουδών (ΔΠΜΣ) στο επιστημονικό πεδίο «Επιστήμη Δεδομένων και Μηχανική Μάθηση (Data Science and Machine Learning)».</p>
             <div class="trainer d-flex justify-content-between align-items-center">
               <div class="trainer-profile d-flex align-items-center">
@@ -140,7 +140,7 @@ if (user == null) {
               <p class="price">4500€</p>
             </div>
 
-            <h3><a href="course-details.jsp">Κυβερνοασφάλεια και Επιστήμη Δεδομένων</a></h3>
+            <h3><a href="masterdetails.jsp">Κυβερνοασφάλεια και Επιστήμη Δεδομένων</a></h3>
             <p>Το πρόγραμμα Κυβερνοασφάλειας & Επιστήμης Δεδομένων απευθύνεται σε επιστήμονες πληροφορικής και επαγγελματίες της πληροφορικής που επιθυμούν να εγγραφούν σε μεταπτυχιακές σπουδές πληροφορικής και να γνωρίσουν τις πρόσφατες εξελίξεις στους τομείς της ασφάλειας υπολογιστών και υποδομών και της ανάλυσης δεδομένων και επιχειρήσεων. Οι τομείς αυτοί παρουσιάζουν ταχεία επιστημονική ανάπτυξη, υψηλή δυναμική και συνεχώς αυξανόμενη ζήτηση στην ευρωπαϊκή και παγκόσμια αγορά.</p>
             <div class="trainer d-flex justify-content-between align-items-center">
               <div class="trainer-profile d-flex align-items-center">
@@ -161,7 +161,7 @@ if (user == null) {
               <p class="price">2400€</p>
             </div>
 
-            <h3><a href="course-details.jsp">
+            <h3><a href="masterdetails.jsp">
               Μηχανική Υπολογιστών, Τηλεπικοινωνιών και Δικτύων</a></h3>
             <p>Το Πρόγραμμα Μεταπτυχιακών Σπουδών (ΠΜΣ) «Μηχανική Υπολογιστών, Τηλεπικοινωνιών και Δικτύων» - "M.Sc. in Computer, Telecommunications and Network Engineering" του Τμήματος Πληροφορικής και Τηλεπικοινωνιών του ΕΚΠΑ οδηγεί στην απονομή Διπλώματος Μεταπτυχιακών Σπουδών (ΔΜΣ) μετά την πλήρη και επιτυχή ολοκλήρωση του προγράμματος σπουδών του. Πιο συγκεκριμένα στο πλαίσιο του ΠΜΣ απονέμεται Δίπλωμα Μεταπτυχιακών ΣπουδώΝ στις εξής ειδικεύσεις/ κατευθύνσεις: 1. Μηχανική Υπολογιστών, 2. Τηλεπικοινωνίες και Επεξεργασία Σήματος, 3. Δικτύωση Υπολογιστών.</p>
             <div class="trainer d-flex justify-content-between align-items-center">
@@ -176,7 +176,7 @@ if (user == null) {
       
     </div>
     <div class="text-center">
-      <a href="courses.jsp" class="get-started-btn">Show More</a>
+      <a href="masters.jsp" class="get-started-btn">Show More</a>
     </div>
 
   </div>

@@ -25,8 +25,8 @@
             <li><input type="search_home" placeholder="  Search Masters..."></li>
             <li><a href="index.jsp">Home</a></li>
             <li class="active"><a href="about.jsp">About</a></li> 
-            <li><a href="courses.jsp">Masters</a></li> 
-            <li><a href="form.jsp">Questionnaire</a></li>    
+            <li><a href="masters.jsp">Masters</a></li> 
+            <li><a href="questionnaire.jsp">Questionnaire</a></li>    
             <li><a href="contact.jsp">Contact</a></li>        
             <li><a href="login.jsp" button type="button" class="btn-get-started">Log in | Sign up</a></li>
     
@@ -49,8 +49,8 @@
             <li><input type="search_home" placeholder="  Search Masters..."></li>
             <li><a href="index.jsp">Home</a></li>
             <li class="active"><a href="about.jsp">About</a></li> 
-            <li><a href="courses.jsp">Masters</a></li> 
-            <li><a href="form.jsp">Questionnaire</a></li>    
+            <li><a href="masters.jsp">Masters</a></li> 
+            <li><a href="questionnaire.jsp">Questionnaire</a></li>    
             <li><a href="contact.jsp">Contact</a></li>        
             <li><a href="logout.jsp">Log out | <%=user.getFirstname()%> <%=user.getLastname()%> </a></li> 
     
@@ -104,7 +104,7 @@
               
               <h3>What makes us different from others?</h3>
                <p> In our webside, exept from browsing to thousands of master's degrees, you can also find what field of computer science is best for you based on your knowledge and personality.<br>
-                <a href="form.jsp">Click here to unlock your career path!</a>
+                <a href="questionnaire.jsp">Click here to unlock your career path!</a>
               </p>
            </div>
           </div>
