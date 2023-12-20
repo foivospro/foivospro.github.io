@@ -12,6 +12,7 @@
 
 <%
 User user = (User)session.getAttribute("user");		
+
 if (user == null) {
 %>
   <!-- ======= Header ======= -->
@@ -29,35 +30,34 @@ if (user == null) {
           <li class="active"><a href="questionnaire.jsp">Questionnaire</a></li>    
           <li><a href="contact.jsp">Contact</a></li>        
           <li><a href="login.jsp" button type="button" class="btn-get-started">Log in | Sign up</a></li>
-  
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
     </div>
   </header><!-- End Header -->
 <%
-} else {	
+} else {
 %>
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.jsp" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a></h1>
+    <h1 class="logo me-auto"><a href="index.jsp" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a></h1>
 
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><input type="search_home" placeholder="  Search Masters..."></li>
-          <li><a href="index.jsp">Home</a></li>
-          <li><a href="about.jsp">About</a></li> 
-          <li><a href="masters.jsp">Masters</a></li> 
-          <li class="active"><a href="questionnaire.jsp">Questionnaire</a></li>    
-          <li><a href="contact.jsp">Contact</a></li>        
-          <li><a href="logout.jsp">Log out | <%=user.getFirstname()%> <%=user.getLastname()%> </a></li> 
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-    </div>
-  </header><!-- End Header -->
+    <nav id="navbar" class="navbar order-last order-lg-0">
+      <ul>
+        <li><input type="search_home" placeholder="  Search Masters..."></li>
+        <li><a href="index.jsp">Home</a></li>
+        <li><a href="about.jsp">About</a></li> 
+        <li><a href="masters.jsp">Masters</a></li> 
+        <li class="active"><a href="questionnaire.jsp">Questionnaire</a></li>   
+        <li><a href="contact.jsp">Contact</a></li>        
+        <li><a href="logout.jsp">Log out | <%=user.getFirstname()%> <%=user.getLastname()%> </a></li> 
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+  </div>
+</header><!-- End Header -->
 <%
 } 
 %>	

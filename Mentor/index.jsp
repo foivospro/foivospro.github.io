@@ -10,7 +10,9 @@
 
 <body>
 <%
-User user = (User)session.getAttribute("user");		
+User user = (User)session.getAttribute("user");	
+
+
 if (user == null) {
 %>
   <!-- ======= Header ======= -->
@@ -34,8 +36,19 @@ if (user == null) {
       </nav><!-- .navbar -->
     </div>
   </header><!-- End Header -->
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex justify-content-center align-items-center">
+      <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
+        <h1>Find your dream study,<br>Discover thousands of  CS  Master's degrees</h1>
+        <h2>Looking for your ideal master's degree match?</h2>
+        <a href="questionnaire.jsp" class="btn-get-started">Get Personalized Results</a>   
+      </div>
+    </section><!-- End Hero -->
 <%
 } else {	
+  UserDAO userdao = new UserDAO();
+  int userid = userdao.getIdUserDB(user);
+  int idquestionnaire = (int) userdao.getIdQuestionnaireDB(userid);
 %>
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
@@ -49,7 +62,17 @@ if (user == null) {
           <li class="active"><a href="index.jsp">Home</a></li>
           <li><a href="about.jsp">About</a></li> 
           <li><a href="masters.jsp">Masters</a></li> 
-          <li><a href="questionnaire.jsp">Questionnaire</a></li>    
+          <%
+          if (idquestionnaire == -1){
+          %>
+          <li><a href="questionnaire.jsp">Questionnaire</a></li>   
+          <%
+          }else{
+          %>
+          <li><a href="results.jsp">Results</a></li>  
+          <%
+          }
+          %>
           <li><a href="contact.jsp">Contact</a></li>        
           <li><a href="logout.jsp">Log out | <%=user.getFirstname()%> <%=user.getLastname()%> </a></li> 
         </ul>
@@ -57,18 +80,27 @@ if (user == null) {
       </nav><!-- .navbar -->
     </div>
   </header><!-- End Header -->
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex justify-content-center align-items-center">
+      <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
+        <h1>Find your dream study,<br>Discover thousands of  CS  Master's degrees</h1>
+        <h2>Looking for your ideal master's degree match?</h2>
+        <%
+        if (idquestionnaire == -1){
+        %>
+        <a href="questionnaire.jsp" class="btn-get-started">Get Personalized Results</a>   
+        <%
+        }else{
+        %>
+        <a href="results.jsp" class="btn-get-started">See Your Personalized Results</a>  
+        <%
+        }
+        %>
+      </div>
+    </section><!-- End Hero -->
 <%
 } 
 %>	
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex justify-content-center align-items-center">
-    <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
-      <h1>Find your dream study,<br>Discover thousands of  CS  Master's degrees</h1>
-      <h2>Looking for your ideal master's degree match?</h2>
-      <a href="questionnaire.jsp" class="btn-get-started">Get Personalized Results</a>
-    </div>
-  </section><!-- End Hero -->
 
   <main id="main">
 

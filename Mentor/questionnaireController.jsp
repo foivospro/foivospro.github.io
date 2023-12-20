@@ -34,12 +34,12 @@ if(user == null){
                 String paramName = "rating" + Integer.toString(j + 1); 
                 String ratingValue = request.getParameter(paramName);
                 int rating = Integer.parseInt(ratingValue);
-                q.InsertAnswer(idQuestionnaire,rating,(j+1));           
+                q.insertAnswer(idQuestionnaire,rating,(j+1));           
          }
-         q.InsertCategoryScore(idQuestionnaire);
+         q.insertCategoryScore(idQuestionnaire);
          session.setAttribute("top3",q.topCategories(idQuestionnaire)); 
          userdao.updateIdQuestionnaire(idUser,idQuestionnaire);   %>
-         <jsp:forward page="masters.jsp"/>
+         <jsp:forward page="results.jsp"/>
          <%       
 }
 %>

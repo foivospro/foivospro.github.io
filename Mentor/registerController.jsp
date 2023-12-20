@@ -41,7 +41,7 @@ if (flag==true) {
         userdao.register(user); 
         int idUser = userdao.getIdUserDB(user);
         user.setIdUser(idUser);
-        request.setAttribute("message", "Registration Successful!");%>
+        request.setAttribute("messageSuccess", "Registration Successful!");%>
         <jsp:forward page="login.jsp"/>
         
 

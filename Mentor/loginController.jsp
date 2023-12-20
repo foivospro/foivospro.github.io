@@ -3,9 +3,8 @@
 <%  
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        UserDAO userdao = new UserDAO();
-       
         String url = request.getParameter("url");
+        UserDAO userdao = new UserDAO();
 
         try {
             User user = userdao.authenticate(email, password);
@@ -13,7 +12,7 @@
 
 
 
-            if(url!=null){
+            if(url != null){
                 response.sendRedirect(url);
             } else { %>
 %>

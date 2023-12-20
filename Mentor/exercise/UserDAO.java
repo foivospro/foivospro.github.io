@@ -3,7 +3,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
  * UserDAO provides all the necessary methods related to users.
  * 
@@ -162,10 +161,6 @@ public class UserDAO {
 		}
 	}//end of register
 
-
-
-
-
 	public int getIdUserDB(User user) throws Exception {
 		DB db = new DB();
 		String query = "SELECT iduser FROM user WHERE email=? AND password=?;";
@@ -216,4 +211,65 @@ public class UserDAO {
         }				
 	}
 
-} //End of class
+/*	public int getIdQuestionnaireDB(int idUser) throws Exception {
+		DB db = new DB();
+		String query = "SELECT idquestionnaire FROM user WHERE iduser=?";
+		try {
+			Connection con = db.getConnection();
+			PreparedStatement stmt = con.prepareStatement(query);
+			stmt.setInt(1, idUser);
+			ResultSet rs = stmt.executeQuery();
+			if (rs.next()) {
+				int idquestionnaire = rs.getInt("idquestionnaire");
+				rs.close();
+            	stmt.close();
+				db.close();
+				return idquestionnaire;
+			}
+			rs.close();
+        	stmt.close();
+			db.close();				
+			return -1;
+		} catch (Exception e) {
+			db.close();
+            throw new Exception(e.getMessage());
+		} finally {
+            db.close();
+        }				
+	}
+	*/
+	public int getIdQuestionnaireDB(int idUser) throws Exception {
+		DB db = new DB();
+		String query = "SELECT idquestionnaire FROM user WHERE iduser=?";
+		try {
+			Connection con = db.getConnection();
+			PreparedStatement stmt = con.prepareStatement(query);
+			stmt.setInt(1, idUser);
+			ResultSet rs = stmt.executeQuery();
+			if (rs.next()) {
+				if (rs.getObject("idquestionnaire") == null){
+					rs.close();
+					stmt.close();
+					db.close();
+					return -1;
+				} else {
+					int idquestionnaire = rs.getInt("idquestionnaire");
+					rs.close();
+					stmt.close();
+					db.close();
+					return idquestionnaire;
+				}
+
+			}
+			rs.close();
+			stmt.close();
+			db.close();
+			return -1;
+		} catch (Exception e) {
+			db.close();
+            throw new Exception(e.getMessage());
+		} finally {
+            db.close();
+        }				
+	}
+} 

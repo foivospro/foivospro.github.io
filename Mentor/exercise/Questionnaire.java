@@ -31,14 +31,7 @@ public class Questionnaire {
         return cat;
     }
 
-    //TODO mia methodos pou tha pairnei ta answers kai tha ta vazei me insert sth db sto table questionnaire (id_questionnaie, id_question, answer)
-    // TODO mia methodos poy tha travaei ta answers apo to table questionnaire kai tha vazei to sum sto score tou table catergory_q dhl endiameso pinaka(id_quationnaire,id_category)
-    //TODO mia methodos poy tha taxinomei to table me ta scores opou id_questionnaire= id_questionnaire toy user kata fthinousa seira
-    //na gyrisw to id twn metaptyxiakwn--> na gyrnaei antikeimena typoy master
-    //prepei na ylopoihthei h master.java
-
-//auth h methodos apla pairnei ta answers pou mou dinei h adrianna kai ta kanei insert sth teleia db mas
-    public void InsertAnswer(int idquestionnaire, int answer, int idquestion) throws Exception {
+    public void insertAnswer(int idquestionnaire, int answer, int idquestion) throws Exception {
         DB db = new DB();
         Connection con = null;
         PreparedStatement stmt = null;
@@ -63,10 +56,8 @@ public class Questionnaire {
             db.close(); 
         }
     }
-
-// mia methodos poy tha travaei ta answers apo to table questionnaire kai tha vazei to sum sto score tou table catergory_q dhl endiameso pinaka(id_quationnaire,id_category)
-   
-    public void InsertCategoryScore(int idquestionnaire) throws Exception {
+  
+    public void insertCategoryScore(int idquestionnaire) throws Exception {
         DB db = new DB();
         Connection con = null;
         PreparedStatement stmt1, stmt2 = null;

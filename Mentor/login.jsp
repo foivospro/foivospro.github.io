@@ -44,9 +44,20 @@
 <div class="text-center">
     <div class="container">
         <%
-        String showMessage = request.getParameter("showMessage");
-        if ("true".equals(showMessage)) { 
+        String url = request.getParameter("url");
+        if (url!=null) { 
     %>
+
+
+
+    <% if(request.getAttribute("message") != null) { %>		
+        <div class="alert alert-danger text-center" role="alert"><%=(String)request.getAttribute("message") %></div>
+    <% } 
+
+   if(request.getAttribute("messageSuccess") != null) { %>		
+        <div class="alert alert-success text-center" role="alert"><%=(String)request.getAttribute("messageSuccess") %></div>
+    <% } %>
+
             <div class="alert alert-danger text-center" role="alert">First you should have logged in.</div>
 
 
@@ -60,7 +71,7 @@
 
                     <div class="panel-body p-3">
                         <form action="loginController.jsp" method="POST">
-                            <input type="hidden" name="url" value="true">
+                            <input type="hidden" name="url" value="<%=url%>">
                             <div class="form-group py-2">
                                 <div class="input-field">
                                     <span class="far fa-user p-2"></span>
@@ -100,6 +111,10 @@
 
         <% if(request.getAttribute("message") != null) { %>		
             <div class="alert alert-danger text-center" role="alert"><%=(String)request.getAttribute("message") %></div>
+        <% } 
+
+       if(request.getAttribute("messageSuccess") != null) { %>		
+            <div class="alert alert-success text-center" role="alert"><%=(String)request.getAttribute("messageSuccess") %></div>
         <% } %>
 
 
@@ -114,7 +129,7 @@
 
                     <div class="panel-body p-3">
                         <form action="loginController.jsp" method="POST">
-                            <input type="hidden" name="form" value="true">
+                            
                             <div class="form-group py-2">
                                 <div class="input-field">
                                     <span class="far fa-user p-2"></span>
