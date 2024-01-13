@@ -2,6 +2,7 @@
 <%@ page import="exercise.*" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List" %>
+<%@ page errorPage="appError.jsp" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,70 +13,10 @@
 
 <body>
   <%
-  User user = (User)session.getAttribute("user");	
-  MasterDAO md = new MasterDAO();
 
-  if (user == null) {
-  %>
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top">
-      <div class="container d-flex align-items-center">
-  
-        <h1 class="logo me-auto"><a href="index.jsp" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a></h1>
-  
-        <nav id="navbar" class="navbar order-last order-lg-0">
-          <ul>
-            <li><input type="search_home" placeholder="  Search Masters..."></li>
-            <li><a href="index.jsp">Home</a></li>
-            <li><a href="about.jsp">About</a></li> 
-            <li class="active"><a href="masters.jsp">Masters</a></li> 
-            <li><a href="questionnaire.jsp">Questionnaire</a></li>    
-            <li><a href="contact.jsp">Contact</a></li>        
-            <li><a href="login.jsp" button type="button" class="btn-get-started">Log in | Sign up</a></li>
-          </ul>
-          <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav><!-- .navbar -->
-      </div>
-    </header><!-- End Header -->
-  <%
-  } else {	
-    UserDAO userdao = new UserDAO();
-    int userid = userdao.getIdUserDB(user);
-    Integer idquestionnaire = (Integer) userdao.getIdQuestionnaireDB(userid);
-
-  %>
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
-
-      <h1 class="logo me-auto"><a href="index.jsp" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a></h1>
-
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><input type="search_home" placeholder="  Search Masters..."></li>
-          <li><a href="index.jsp">Home</a></li>
-          <li><a href="about.jsp">About</a></li> 
-          <li class="active"><a href="masters.jsp">Masters</a></li> 
-          <%
-          if (idquestionnaire == null || idquestionnaire == -1){
-          %>
-          <li><a href="questionnaire.jsp">Questionnaire</a></li>   
-          <%
-          }else{
-          %>
-          <li><a href="results.jsp">Results</a></li>  
-          <%
-          }
-          %>
-          <li><a href="contact.jsp">Contact</a></li>        
-          <li><a href="logout.jsp">Log out | <%=user.getFirstname()%> <%=user.getLastname()%> </a></li> 
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-    </div>
-  </header><!-- End Header -->
-  <%
-  } 
+  MasterDAO md = new MasterDAO(); %>
+  <%@ include file="navbar.jsp" %>
+  <% } 
   %>	
   <main id="main" data-aos="fade-in">
       <!-- ======= Breadcrumbs ======= -->
@@ -85,7 +26,13 @@
           <p>In this section you can see all Masters </p>
         </div>
       </div><!-- End Breadcrumbs -->
-    <br>
+  
+
+    <% if(request.getAttribute("search_message") != null) { %>		
+      <div class="alert alert-danger text-center" role="alert"><%=(String)request.getAttribute("search_message") %></div>
+  <% } 
+  %>
+
     <section id="courses" class="courses">
       <div class="container" data-aos="fade-up">
         <div class="row" data-aos="zoom-in" data-aos-delay="100">
@@ -106,7 +53,7 @@
                     <img src="#" class="img-fluid" alt="">
                     <span><%=m.getUniversity()%></span>
                   </div>
-                  <a href="masterdetails.jsp?masterid=<%=m.getIdMaster()%>" class="btn-get-started">For more details click here </a>
+                  <a href="masterdetails.jsp?masterid=<%=m.getIdMaster()%>" class="btn-get-started">More details</a>
                 </div>
               </div>
             </div>

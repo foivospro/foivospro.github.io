@@ -2,6 +2,7 @@
 <%@ page import="exercise.*" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List" %>
+<%@ page errorPage="appError.jsp" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +19,7 @@
  
   if (user == null) {
   %> 
-    request.setAttribute("message","You don't have access to this page.First Log in"); %>
+    request.setAttribute("message","You don't have access to this page. First log in"); %>
    <jsp:forward page="login.jsp"/>
 
     <%}else{
@@ -41,11 +42,25 @@
   
         <nav id="navbar" class="navbar order-last order-lg-0">
           <ul>
-            <li><input type="search_home" placeholder="  Search Masters..."></li>
+            <li>
+              <form action="searchController.jsp" method="POST" class="search-form">
+                <div class="search-container">
+                  <input type="search_home" name="keyword" placeholder="Search Masters..." />
+                  <button type="submit" class="btn-search">
+                    <i class="bi bi-search"></i>
+                  </button>
+                </div>
+              </form>
+            </li>
             <li><a href="index.jsp">Home</a></li>
             <li><a href="about.jsp">About</a></li> 
             <li><a href="masters.jsp">Masters</a></li> 
-            <li class="active"><a href="results.jsp">Results</a></li>    
+            <li class="dropdown"><a href="#"><span>Questionnaire</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li class="<%=request.getRequestURI().substring(request.getRequestURI().lastIndexOf("/") + 1).equals("results.jsp") ? "active" : ""  %>"><a href="results.jsp">Results</a></li>
+                <li class="<%=request.getRequestURI().substring(request.getRequestURI().lastIndexOf("/") + 1).equals("questionnaire.jsp") ? "active" : ""  %>"><a href="questionnaire.jsp">New Questionnaire</a></li>
+              </ul>
+            </li> 
             <li><a href="contact.jsp">Contact</a></li>        
             <li><a href="logout.jsp">Log out | <%=user.getFirstname()%> <%=user.getLastname()%> </a></li> 
           </ul>
@@ -68,10 +83,11 @@
       <div class="container" data-aos="fade-up">
         <div class="row" data-aos="zoom-in" data-aos-delay="100">
    <%
-   int count = 1;
+   int count = 0;
+   String[] st = {"st", "nd", "rd"};
     for (int tm : topid ){ 
       %>
-      <h1 style="color: #c91603;"><%=count++%>.</h1>
+      <h2 style="color: #c91603;"><%=++count%><%=st[count-1]%> category</h2>
       <br>
       <%
 
@@ -93,7 +109,7 @@
           <img src="#" class="img-fluid" alt="">
           <span><%=mr.getUniversity()%></span>
         </div>
-        <a href="masterdetails.jsp?masterid=<%=mr.getIdMaster()%>" class="btn-get-started">For more details click here</a>
+        <a href="masterdetails.jsp?masterid=<%=mr.getIdMaster()%>" class="btn-get-started">More details</a>
       </div>
     </div>
   </div>

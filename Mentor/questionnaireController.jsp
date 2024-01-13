@@ -21,9 +21,15 @@ if(user == null){
         <jsp:forward page="login.jsp"/>
 <%
 }else {
-        Questionnaire q = new Questionnaire();
         UserDAO userdao = new UserDAO();
+        Questionnaire q = new Questionnaire();
         int idUser = userdao.getIdUserDB(user);
+        int idquestionnaire = userdao.getIdQuestionnaireDB(idUser);
+        
+        if(idquestionnaire != -1 ){
+        q.deleteQuestionnaire(idquestionnaire);
+        } 
+
         q.setIdQuestionnaire(idUser+100); 
         int idQuestionnaire = q.getIdQuestionnaire();
         user.setIdQuestionnaire(idQuestionnaire);

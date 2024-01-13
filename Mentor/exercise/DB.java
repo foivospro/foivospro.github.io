@@ -29,7 +29,7 @@ public class DB {
 		try {
 
 			// Dynamically load the driver's class file into memory
-			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			Class.forName("com.mysql.jdbc.Driver").getDeclaredConstructor().newInstance();
 
 		} catch (Exception e) {
 

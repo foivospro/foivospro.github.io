@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="exercise.*" %>
+<%@ page errorPage="appError.jsp" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,71 +10,14 @@
 </head>
 
 <body>
+  <%@ include file="navbar.jsp" %>
 
-  <%
-  User user = (User)session.getAttribute("user");		
-
-  if (user == null) {
-  %>
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top">
-      <div class="container d-flex align-items-center">
+  <%}
   
-        <h1 class="logo me-auto"><a href="index.jsp" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a></h1>
-  
-        <nav id="navbar" class="navbar order-last order-lg-0">
-          <ul>
-            <li><input type="search_home" placeholder="  Search Masters..."></li>
-            <li><a href="index.jsp">Home</a></li>
-            <li class="active"><a href="about.jsp">About</a></li> 
-            <li><a href="masters.jsp">Masters</a></li> 
-            <li><a href="questionnaire.jsp">Questionnaire</a></li>    
-            <li><a href="contact.jsp">Contact</a></li>        
-            <li><a href="login.jsp" button type="button" class="btn-get-started">Log in | Sign up</a></li>
-          </ul>
-          <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav><!-- .navbar -->
-      </div>
-    </header><!-- End Header -->
-  <%
-  } else {	
-    UserDAO userdao = new UserDAO();
-    int userid = userdao.getIdUserDB(user);
-    Integer idquestionnaire = (Integer) userdao.getIdQuestionnaireDB(userid);
-  %>
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
+  MasterDAO mad = new MasterDAO();
+  UserDAO usd = new UserDAO(); %>
 
-      <h1 class="logo me-auto"><a href="index.jsp" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a></h1>
-
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><input type="search_home" placeholder="  Search Masters..."></li>
-          <li><a href="index.jsp">Home</a></li>
-          <li class="active"><a href="about.jsp">About</a></li> 
-          <li><a href="masters.jsp">Masters</a></li> 
-          <%
-          if (idquestionnaire == null || idquestionnaire == -1){
-          %>
-          <li><a href="questionnaire.jsp">Questionnaire</a></li>   
-          <%
-          }else{
-          %>
-          <li><a href="results.jsp">Results</a></li>  
-          <%
-          }
-          %>
-          <li><a href="contact.jsp">Contact</a></li>        
-          <li><a href="logout.jsp">Log out | <%=user.getFirstname()%> <%=user.getLastname()%> </a></li> 
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-    </div>
-  </header><!-- End Header -->
-  <%
-  } 
-  %>	
+ 
 
   <main id="main">
     <!-- ======= Breadcrumbs ======= -->
@@ -95,11 +39,21 @@
               </p>
             </div>
             <div class="col-lg-9 order-2 order-lg-1" data-aos="fade-left" data-aos-delay="100">
-              <video width="1000" height="350" autoplay muted>
-                <source src="assets/img/video.mp4" type="video/mp4">
-              Your browser does not support the video tag.
+              <video width="1000" height="350"  autoplay muted>
+                  <source src="assets/img/video.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
               </video>
-            </div>
+          
+              <!-- Προσθήκη media queries για φορητές συσκευές -->
+              <style>
+                  @media (max-width: 768px) {
+                      .col-lg-9 video {
+                          width: 100%;
+                          height: auto;
+                      }
+                  }
+              </style>
+          </div>
           </div>
           <br>
           <div class="row mx-auto ">
@@ -115,12 +69,18 @@
             <div class="col-lg-4 pt-4 pt-lg-1 order-2 order-lg-1 content">
               
               <h3>What makes us different from others?</h3>
-               <p> In our webside, exept from browsing to thousands of master's degrees, you can also find what field of computer science is best for you based on your knowledge and personality.<br>
-                <a href="questionnaire.jsp">Click here to unlock your career path!</a>
+               <p> In our webside, exept from browsing to thousands of master's degrees, you can also find what field of computer science is best for you based on your knowledge and personality.<br> 
               </p>
            </div>
           </div>
         </div>
+
+
+        <div class="text-center">
+          <a href="questionnaire.jsp" class="get-started-btn">Unlock your career path!</a> 
+        </div>
+    
+       
       </section><!-- End About Section -->
 
    <!-- ======= Counts Section ======= -->
@@ -130,12 +90,12 @@
       <div class="row counters">
 
         <div class="col-lg-13 col-6 text-center">
-          <span data-purecounter-start="0" data-purecounter-end="1232" data-purecounter-duration="1" class="purecounter"></span>
-          <p>Students</p>
+          <span data-purecounter-start="0" data-purecounter-end=" <%=usd.getUsers().size()%>" data-purecounter-duration="1" class="purecounter"></span>
+          <p>Users</p>
         </div>
 
         <div class="col-lg-13 col-6 text-center">
-          <span data-purecounter-start="0" data-purecounter-end="64" data-purecounter-duration="1" class="purecounter"></span>
+          <span data-purecounter-start="0" data-purecounter-end="<%=mad.getAllMasters().size()%>" data-purecounter-duration="1" class="purecounter"></span>
           <p>Masters</p>
         </div>
 

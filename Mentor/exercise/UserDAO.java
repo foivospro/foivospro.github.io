@@ -26,8 +26,8 @@ public class UserDAO {
 			ResultSet rs = stmt.executeQuery();
 			List<User> users = new ArrayList<User>();
 			while (rs.next()) {
-				User user = new User(rs.getString("firstname"),
-                        rs.getString("lastname"),
+				User user = new User(rs.getString("name"),
+                        rs.getString("surname"),
                         rs.getString("email"),
                         rs.getString("password"));	
 					users.add(user);
@@ -66,8 +66,8 @@ public class UserDAO {
                 db.close();
                 return null;
             }
-            User user = new User(rs.getString("firstname"),
-                        rs.getString("lastname"),
+            User user = new User(rs.getString("name"),
+                        rs.getString("surname"),
                         rs.getString("email"),
                         rs.getString("password"));
             
@@ -131,19 +131,18 @@ public class UserDAO {
 	 */
 	public void register(User user) throws Exception {
 		DB db = new DB();
-		String query1 = "SELECT * FROM user WHERE password=? OR email=?;";
+		String query1 = "SELECT * FROM user WHERE email=?;";
 		String query2 = "INSERT INTO user (name,surname,email,password) VALUES (?,?,?,?);";
 		try {
 			Connection con = db.getConnection();
 			PreparedStatement stmt1 = con.prepareStatement(query1);
-			stmt1.setString(1, user.getPassword());
-			stmt1.setString(2, user.getEmail());
+			stmt1.setString(1, user.getEmail());
 			ResultSet rs = stmt1.executeQuery();
 			if (rs.next()) {
 				rs.close();
 				stmt1.close();
 				db.close();
-				throw new Exception("Sorry, password or email already registered");
+				throw new Exception("Sorry, email already registered");
 			}
 
 			PreparedStatement stmt2 = con.prepareStatement(query2);
@@ -271,5 +270,39 @@ public class UserDAO {
 		} finally {
             db.close();
         }				
+	}
+
+
+
+
+	public static void updateUserMaster(int iduser, int idmaster) throws Exception {
+		DB db = new DB();
+		String querySelect = "SELECT iduser FROM user_master WHERE iduser = ? AND idmaster = ?";
+		String queryInsert = "INSERT INTO user_master (iduser, idmaster) VALUES (?, ?)";
+		
+		Connection con = null;
+		PreparedStatement stmtSelect = null;
+		PreparedStatement stmtInsert = null;
+		
+		try {
+			con = db.getConnection();
+			stmtSelect = con.prepareStatement(querySelect);
+			stmtSelect.setInt(1, iduser);
+			stmtSelect.setInt(2, idmaster);
+			ResultSet rs = stmtSelect.executeQuery();
+			if (!rs.next()) { 
+				stmtInsert = con.prepareStatement(queryInsert);
+				stmtInsert.setInt(1, iduser);
+				stmtInsert.setInt(2, idmaster);
+				stmtInsert.executeUpdate();
+				stmtInsert.close();
+			}	
+		} catch (Exception e) {
+			throw new Exception(e.getMessage());
+		} finally {
+			stmtSelect.close();
+			con.close();
+			db.close();
+		}                
 	}
 } 

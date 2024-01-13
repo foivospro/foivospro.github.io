@@ -159,4 +159,38 @@ public void insertIdQuestionnaire(int idUser, int answer) throws Exception {
         }				
 	}
 
+public void deleteQuestionnaire(int idQuestionnaire) throws Exception {
+		DB db = new DB();
+		String query1 = "DELETE FROM questionnaire_category WHERE idquestionnaire= ?;";
+        String query2 = "UPDATE user SET idquestionnaire = NULL WHERE idquestionnaire = ?;";
+        String query3 = "DELETE FROM questionnaire WHERE idquestionnaire = ?;";
+
+		try {
+			Connection con = db.getConnection();
+			PreparedStatement stmt1 = con.prepareStatement(query1);
+            PreparedStatement stmt2 = con.prepareStatement(query2);
+            PreparedStatement stmt3 = con.prepareStatement(query3);
+			stmt1.setInt(1, idQuestionnaire);
+			stmt1.executeUpdate();
+            stmt1.close();
+
+            stmt2.setInt(1, idQuestionnaire);
+			stmt2.executeUpdate();
+            stmt2.close();
+
+            stmt3.setInt(1, idQuestionnaire);
+			stmt3.executeUpdate();
+            stmt3.close();
+
+			con.close();
+			db.close();
+		} catch (Exception e) {
+			db.close();
+            throw new Exception(e.getMessage());
+		} finally {
+            db.close();
+        }				
+	}
+    
+
 }

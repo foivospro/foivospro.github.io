@@ -12,7 +12,6 @@
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -62,8 +61,8 @@
 
 
                     
-        <div class="row">
-            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+        <div class="row justify-content-center align-items-cente">
+            <div class="col-lg-5 col-md-7">
                 <div class="panel border bg-white">
                     <div class="panel-heading">
                         <h3 class="pt-3 font-weight-bold">Login</h3>
@@ -74,20 +73,20 @@
                             <input type="hidden" name="url" value="<%=url%>">
                             <div class="form-group py-2">
                                 <div class="input-field">
-                                    <span class="far fa-user p-2"></span>
+                                    <i class="bi bi-person"></i>
                                     <input type="text" placeholder="Enter your Email" name="email" required>
                                 </div>
                             </div>
 
                             <div class="form-group py-1 pb-2">
                                 <div class="input-field">
-                                    <span class="fas fa-lock px-2"></span>
+                                    <i class="bi bi-shield-lock"></i>
                                     <input type="password" placeholder="Enter your Password" name="password"required>
                                 </div>
                             </div>
 
                             <div class="text-center">
-                                <button type="submit" class="btn-form">Login</button>
+                                <button type="submit" style="color:#c91603;" class="btn-form" >Login</button>
                             </div>
 
                             <div class="text-center pt-4 text-muted">Don't have an account? <a href="register.jsp">Sign up</a></div>
@@ -120,8 +119,8 @@
 
 
 
-        <div class="row">
-            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+        <div class="row justify-content-center align-items-cente">
+            <div class="col-lg-5 col-md-7">
                 <div class="panel border bg-white">
                     <div class="panel-heading">
                         <h3 class="pt-3 font-weight-bold">Login</h3>
@@ -132,14 +131,14 @@
                             
                             <div class="form-group py-2">
                                 <div class="input-field">
-                                    <span class="far fa-user p-2"></span>
+                                    <i class="bi bi-person"></i>
                                     <input type="text" placeholder="Enter your Email" name="email" required>
                                 </div>
                             </div>
 
                             <div class="form-group py-1 pb-2">
                                 <div class="input-field">
-                                    <span class="fas fa-lock px-2"></span>
+                                    <i class="bi bi-shield-lock"></i>
                                     <input type="password" placeholder="Enter your Password" name="password"required>
                                 </div>
                             </div>

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="exercise.*" %>
 <%@ page import="java.util.List" %>
+<%@ page errorPage="appError.jsp" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,58 +11,93 @@
 </head>
 <body>
 
-<%
-User user = (User)session.getAttribute("user");		
+  <%
+  User user = (User)session.getAttribute("user");	
+  UserDAO userdao = new UserDAO();	
+  Questionnaire q = new Questionnaire();
+  
+  
+  if (user == null) {
+    request.setAttribute("message", "To answer the Questionnaire , please log in.");
+  %>
+  <jsp:forward page="login.jsp"/>
+  <%
+  } else {
+    int userid = userdao.getIdUserDB(user);
+    int idquestionnaire = userdao.getIdQuestionnaireDB(userid);
 
-if (user == null) {
-%>
-  <!-- ======= Header ======= -->
+    if(idquestionnaire == -1){ %>
+      <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
-
+  
       <h1 class="logo me-auto"><a href="index.jsp" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a></h1>
-
+  
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><input type="search_home" placeholder="  Search Masters..."></li>
+          <li>
+            <form action="searchController.jsp" method="POST" class="search-form">
+              <div class="search-container">
+                <input type="search_home" name="keyword" placeholder="Search Masters..." />
+                <button type="submit" class="btn-search">
+                  <i class="bi bi-search"></i>
+                </button>
+              </div>
+            </form>
+          </li>
           <li><a href="index.jsp">Home</a></li>
-          <li><a href="about.jsp">About</a></li> 
+          <li><a href="about.jsp">About</a></li>
           <li><a href="masters.jsp">Masters</a></li> 
-          <li class="active"><a href="questionnaire.jsp">Questionnaire</a></li>    
+          <li class="active"><a href="questionnaire.jsp">Questionnaire</a></li>   
           <li><a href="contact.jsp">Contact</a></li>        
-          <li><a href="login.jsp" button type="button" class="btn-get-started">Log in | Sign up</a></li>
+          <li><a href="logout.jsp">Log out | <%=user.getFirstname()%> <%=user.getLastname()%> </a></li> 
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
     </div>
   </header><!-- End Header -->
-<%
-} else {
-%>
-<!-- ======= Header ======= -->
-<header id="header" class="fixed-top">
-  <div class="container d-flex align-items-center">
+    <%} else { 
+  
+      %>
+       <!-- ======= Header ======= -->
+     <header id="header" class="fixed-top">
+      <div class="container d-flex align-items-center">
+  
+        <h1 class="logo me-auto"><a href="index.jsp" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a></h1>
+  
+        <nav id="navbar" class="navbar order-last order-lg-0">
+          <ul>
+            <li>
+              <form action="searchController.jsp" method="POST" class="search-form">
+                <div class="search-container">
+                  <input type="search_home" name="keyword" placeholder="Search Masters..." />
+                  <button type="submit" class="btn-search">
+                    <i class="bi bi-search"></i>
+                  </button>
+                </div>
+              </form>
+            </li>
+            <li><a href="index.jsp">Home</a></li>
+            <li><a href="about.jsp">About</a></li> 
+            <li><a href="masters.jsp">Masters</a></li> 
+            <li class="dropdown"><a href="#"><span>Questionnaire</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li class="<%=request.getRequestURI().substring(request.getRequestURI().lastIndexOf("/") + 1).equals("results.jsp") ? "active" : ""  %>"><a href="results.jsp">Results</a></li>
+                <li class="<%=request.getRequestURI().substring(request.getRequestURI().lastIndexOf("/") + 1).equals("questionnaire.jsp") ? "active" : ""  %>"><a href="questionnaire.jsp">New Questionnaire</a></li>
+              </ul>
+            </li> 
+            <li><a href="contact.jsp">Contact</a></li>        
+            <li><a href="logout.jsp">Log out | <%=user.getFirstname()%> <%=user.getLastname()%> </a></li> 
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+      </div>
+    </header><!-- End Header -->
 
-    <h1 class="logo me-auto"><a href="index.jsp" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a></h1>
 
-    <nav id="navbar" class="navbar order-last order-lg-0">
-      <ul>
-        <li><input type="search_home" placeholder="  Search Masters..."></li>
-        <li><a href="index.jsp">Home</a></li>
-        <li><a href="about.jsp">About</a></li> 
-        <li><a href="masters.jsp">Masters</a></li> 
-        <li class="active"><a href="questionnaire.jsp">Questionnaire</a></li>   
-        <li><a href="contact.jsp">Contact</a></li>        
-        <li><a href="logout.jsp">Log out | <%=user.getFirstname()%> <%=user.getLastname()%> </a></li> 
-      </ul>
-      <i class="bi bi-list mobile-nav-toggle"></i>
-    </nav><!-- .navbar -->
-  </div>
-</header><!-- End Header -->
-<%
-} 
-%>	
-
+    <%}
+  } 
+  %>	
      <!-- ======= Breadcrumbs ======= -->
      <div class="breadcrumbs" data-aos="fade-in">
       <div class="container">
